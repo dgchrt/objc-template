@@ -6,7 +6,6 @@
 @interface Parent : Root
 
 - (int)luckyNumber;
-- (void)printIntroduction;
 
 @end
 
