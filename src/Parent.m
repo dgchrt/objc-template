@@ -1,15 +1,14 @@
-#include <stdio.h>
 #include "Parent.h"
+#include <stdio.h>
 
 @implementation Parent
 
-// Returns a lucky number associated with the class.
 - (int)luckyNumber {
-    return 42; // The lucky number for the Parent class.
+  return 42;
 }
 
 - (void)printIntroduction {
-    printf("[%s] lucky number: %d\n", [self className], [self luckyNumber]);
+  printf("[%s] lucky number: %d\n", [self className], [self luckyNumber]);
 }
 
 @end

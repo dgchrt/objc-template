@@ -5,9 +5,9 @@
 
 __attribute__((objc_root_class))
 @interface Root {
-    Class isa;
+  Class isa;
 @private
-    unsigned int _retainCount;
+  unsigned int _retainCount;
 }
 
 + (id)alloc;
