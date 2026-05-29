@@ -5,13 +5,9 @@
 #ifndef PARENT_H
 #define PARENT_H
 
-// The Parent class is marked as a root class using the objc_root_class attribute.
-// This means it does not inherit from any other class.
-__attribute__((objc_root_class))
-@interface Parent
+#include "Root.h"
 
-// Returns the name of the class as a C string.
-- (const char *)displayName;
+@interface Parent : Root
 
 // Returns a lucky number associated with the class.
 - (int)luckyNumber;

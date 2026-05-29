@@ -1,21 +1,25 @@
 CC := gcc
-TARGET := objc-sample
+BUILD := build
+TARGET := $(BUILD)/$(notdir $(CURDIR))
 
 CFLAGS := -std=gnu11 -Wall -Wextra -Werror -Isrc
 OBJCFLAGS := -x objective-c
 LDFLAGS := -lobjc
 
-SRC := src/main.m src/Parent.m src/Child.m
+SRC := $(wildcard src/*.m)
 
 .PHONY: all run clean
 
 all: $(TARGET)
 
-$(TARGET): $(SRC)
+$(TARGET): $(SRC) | $(BUILD)
 	$(CC) $(CFLAGS) $(OBJCFLAGS) $(SRC) $(LDFLAGS) -o $(TARGET)
+
+$(BUILD):
+	mkdir -p $(BUILD)
 
 run: $(TARGET)
 	./$(TARGET)
 
 clean:
-	rm -f $(TARGET)
+	rm -rf $(BUILD)

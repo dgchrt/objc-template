@@ -6,12 +6,6 @@
 
 @implementation Child
 
-// Returns the name of the class as a C string.
-// Overrides the Parent class's implementation to return "Child".
-- (const char *)displayName {
-    return "Child"; // Hardcoded class name.
-}
-
 // Returns a lucky number associated with the class.
 // Overrides the Parent class's implementation and adds 7 to the Parent's lucky number.
 - (int)luckyNumber {
@@ -23,7 +17,7 @@
 // Calls the Parent's implementation using the super keyword.
 - (void)printIntroduction {
     [super printIntroduction]; // Calls the Parent's printIntroduction method.
-    printf("[%s] super call complete.\n", [self displayName]); // Adds additional output.
+    printf("[%s] super call complete.\n", [self className]); // Adds additional output.
 }
 
 @end
