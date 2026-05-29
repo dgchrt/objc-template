@@ -6,6 +6,7 @@
 __attribute__((objc_root_class))
 @interface Root {
     Class isa;
+@private
     unsigned int _retainCount;
 }
 
