@@ -3,7 +3,7 @@ BUILD := build
 TARGET := $(BUILD)/$(notdir $(CURDIR))
 
 CFLAGS := -std=gnu11 -Wall -Wextra -Werror -Isrc
-OBJCFLAGS := -x objective-c
+OBJCFLAGS := -x objective-c -fgnu-runtime
 LDFLAGS := -lobjc
 
 SRC := $(wildcard src/*.m)

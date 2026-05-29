@@ -8,8 +8,8 @@ int main(void) {
     [parent printIntroduction];
     [child printIntroduction];
 
-    [parent dealloc];
-    [child dealloc];
+    [parent release];
+    [child release];
 
     return 0;
 }
