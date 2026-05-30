@@ -9,6 +9,15 @@ This project is an Objective-C template, ready to be used as a starting point fo
 
 The template is simple, portable, and enables Objective-C without the need for heavier libraries like Foundation or GNUstep.
 
+## Generic Abstractions
+The template now includes reusable low-level abstractions that are useful beyond game projects:
+
+- `String`: Minimal immutable string wrapper with C-string interop (`fromCString`, `initWithCString`, comparisons, lowercase conversion).
+- `List`: Dynamic array of `id` objects with manual ownership semantics and predictable power-of-two capacity growth.
+- `Dictionary`: String-keyed hash table (`String *` keys, `id` values) with open addressing and manual ownership semantics.
+
+These are intentionally lightweight and runtime-only (`libobjc`), with no Foundation dependency.
+
 ## Requirements
 - **Compiler**: GCC with Objective-C support (`gobjc`).
 - **Runtime Library**: `libobjc` (GNU Objective-C runtime).
@@ -23,12 +32,15 @@ The template is simple, portable, and enables Objective-C without the need for h
 - `src/Root.h` / `src/Root.m`: Defines and implements the custom root class (`Root`).
 - `src/Parent.h` / `src/Parent.m`: Sample subclass (`Parent`).
 - `src/Child.h` / `src/Child.m`: Sample subclass (`Child`).
+- `src/String.h` / `src/String.m`: Generic minimal string abstraction.
+- `src/List.h` / `src/List.m`: Generic dynamic list abstraction.
+- `src/Dictionary.h` / `src/Dictionary.m`: Generic hash-table dictionary abstraction.
 - `src/main.m`: Entry point for the program.
 - `Makefile`: Build, test, and run instructions.
 - `tests/`: Unit tests (see below).
 ## Unit Tests
 
-Unit tests are provided for each class in the `tests/` directory. Each test file (e.g., `tests/root.m`, `tests/parent.m`, `tests/child.m`) is a standalone program with its own `main()` function and assertions. Run all tests with:
+Unit tests are provided for each class in the `tests/` directory. Each test file (e.g., `tests/root.m`, `tests/parent.m`, `tests/child.m`, `tests/string.m`, `tests/list.m`, `tests/dictionary.m`) is a standalone program with its own `main()` function and assertions. Run all tests with:
 
 ```sh
 make test
